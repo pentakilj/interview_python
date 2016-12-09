@@ -1,114 +1,117 @@
 <!-- markdown-toc start - Don't edit this section. Run M-x markdown-toc-generate-toc again -->
 **Table of Contents**
 
-- [Python语言特性](#python)
-    - [1 Python的函数参数传递](#1-python)
-    - [2 Python中的元类(metaclass)](#2-pythonmetaclass)
-    - [3 @staticmethod和@classmethod](#3-staticmethodclassmethod)
-    - [4 类变量和实例变量](#4-)
-    - [5 Python自省](#5-python)
-    - [6 字典推导式](#6-)
-    - [7 Python中单下划线和双下划线](#7-python)
-    - [8 字符串格式化:%和.format](#8-format)
-    - [9 迭代器和生成器](#9-)
+- [Python语言特性](#python语言特性)
+    - [1 Python的函数参数传递](#1-python的函数参数传递)
+    - [2 Python中的元类(metaclass)](#2-python中的元类metaclass)
+    - [3 @staticmethod和@classmethod](#3-staticmethod和classmethod)
+    - [4 类变量和实例变量](#4-类变量和实例变量)
+    - [5 Python自省](#5-python自省)
+    - [6 字典推导式](#6-字典推导式)
+    - [7 Python中单下划线和双下划线](#7-python中单下划线和双下划线)
+    - [8 字符串格式化:%和.format](#8-字符串格式化和format)
+    - [9 迭代器和生成器](#9-迭代器和生成器)
     - [10 `*args` and `**kwargs`](#10-args-and-kwargs)
-    - [11 面向切面编程AOP和装饰器](#11-aop)
-    - [12 鸭子类型](#12-)
-    - [13 Python中重载](#13-python)
-    - [14 新式类和旧式类](#14-)
-    - [15 `__new__`和`__init__`的区别](#15-newinit)
-    - [16 单例模式](#16-)
-        - [1 使用`__new__`方法](#1-new)
-        - [2 共享属性](#2-)
-        - [3 装饰器版本](#3-)
-    - [17 Python中的作用域](#17-python)
-    - [18 GIL线程全局锁](#18-gil)
-    - [19 协程](#19-)
-    - [20 闭包](#20-)
-    - [21 lambda函数](#21-lambda)
-    - [22 Python函数式编程](#22-python)
-    - [23 Python里的拷贝](#23-python)
-    - [24 Python垃圾回收机制](#24-python)
-        - [1 引用计数](#1-)
-        - [2 标记-清除机制](#2--)
-        - [3 分代技术](#3-)
-    - [25 Python的List](#25-pythonlist)
-    - [26 Python的is](#26-pythonis)
-    - [27 read,readline和readlines](#27-readreadlinereadlines)
-    - [28 Python2和3的区别](#28-python23)
-- [操作系统](#)
-    - [1 select,poll和epoll](#1-selectpollepoll)
-    - [2 调度算法](#2-)
-    - [3 死锁](#3-)
-    - [4 程序编译与链接](#4-)
-        - [1 预处理](#1-)
-        - [2 编译](#2-)
-        - [3 汇编](#3-)
-        - [4 链接](#4-)
-    - [5 静态链接和动态链接](#5-)
-    - [6 虚拟内存技术](#6-)
-    - [7 分页和分段](#7-)
-        - [分页与分段的主要区别](#)
-    - [8 页面置换算法](#8-)
-    - [9 边沿触发和水平触发](#9-)
-- [数据库](#)
-    - [1 事务](#1-)
-    - [2 数据库索引](#2-)
-    - [3 Redis原理](#3-redis)
-    - [4 乐观锁和悲观锁](#4-)
+    - [11 面向切面编程AOP和装饰器](#11-面向切面编程aop和装饰器)
+    - [12 鸭子类型](#12-鸭子类型)
+    - [13 Python中重载](#13-python中重载)
+    - [14 新式类和旧式类](#14-新式类和旧式类)
+    - [15 `__new__`和`__init__`的区别](#15-__new__和__init__的区别)
+    - [16 单例模式](#16-单例模式)
+        - [1 使用`__new__`方法](#1-使用__new__方法)
+        - [2 共享属性](#2-共享属性)
+        - [3 装饰器版本](#3-装饰器版本)
+        - [4 import方法](#4-import方法)
+    - [17 Python中的作用域](#17-python中的作用域)
+    - [18 GIL线程全局锁](#18-gil线程全局锁)
+    - [19 协程](#19-协程)
+    - [20 闭包](#20-闭包)
+    - [21 lambda函数](#21-lambda函数)
+    - [22 Python函数式编程](#22-python函数式编程)
+    - [23 Python里的拷贝](#23-python里的拷贝)
+    - [24 Python垃圾回收机制](#24-python垃圾回收机制)
+        - [1 引用计数](#1-引用计数)
+        - [2 标记-清除机制](#2-标记-清除机制)
+        - [3 分代技术](#3-分代技术)
+    - [25 Python的List](#25-python的list)
+    - [26 Python的is](#26-python的is)
+    - [27 read,readline和readlines](#27-readreadline和readlines)
+    - [28 Python2和3的区别](#28-python2和3的区别)
+    - [29 super.__init__()](#29-super-init)
+    - [30 range-and-xrange](#30-range-and-xrange)
+- [操作系统](#操作系统)
+    - [1 select,poll和epoll](#1-selectpoll和epoll)
+    - [2 调度算法](#2-调度算法)
+    - [3 死锁](#3-死锁)
+    - [4 程序编译与链接](#4-程序编译与链接)
+        - [1 预处理](#1-预处理)
+        - [2 编译](#2-编译)
+        - [3 汇编](#3-汇编)
+        - [4 链接](#4-链接)
+    - [5 静态链接和动态链接](#5-静态链接和动态链接)
+    - [6 虚拟内存技术](#6-虚拟内存技术)
+    - [7 分页和分段](#7-分页和分段)
+        - [分页与分段的主要区别](#分页与分段的主要区别)
+    - [8 页面置换算法](#8-页面置换算法)
+    - [9 边沿触发和水平触发](#9-边沿触发和水平触发)
+- [数据库](#数据库)
+    - [1 事务](#1-事务)
+    - [2 数据库索引](#2-数据库索引)
+    - [3 Redis原理](#3-redis原理)
+    - [4 乐观锁和悲观锁](#4-乐观锁和悲观锁)
     - [5 MVCC](#5-mvcc)
-    - [6 MyISAM和InnoDB](#6-myisaminnodb)
-- [网络](#)
-    - [1 三次握手](#1-)
-    - [2 四次挥手](#2-)
-    - [3 ARP协议](#3-arp)
-    - [4 urllib和urllib2的区别](#4-urlliburllib2)
-    - [5 Post和Get](#5-postget)
-    - [6 Cookie和Session](#6-cookiesession)
-    - [7 apache和nginx的区别](#7-apachenginx)
-    - [8 网站用户密码保存](#8-)
-    - [9 HTTP和HTTPS](#9-httphttps)
-    - [10 XSRF和XSS](#10-xsrfxss)
-    - [11 幂等 Idempotence](#11--idempotence)
-    - [12 RESTful架构(SOAP,RPC)](#12-restfulsoaprpc)
+    - [6 MyISAM和InnoDB](#6-myisam和innodb)
+- [网络](#网络)
+    - [1 三次握手](#1-三次握手)
+    - [2 四次挥手](#2-四次挥手)
+    - [3 ARP协议](#3-arp协议)
+    - [4 urllib和urllib2的区别](#4-urllib和urllib2的区别)
+    - [5 Post和Get](#5-post和get)
+    - [6 Cookie和Session](#6-cookie和session)
+    - [7 apache和nginx的区别](#7-apache和nginx的区别)
+    - [8 网站用户密码保存](#8-网站用户密码保存)
+    - [9 HTTP和HTTPS](#9-http和https)
+    - [10 XSRF和XSS](#10-xsrf和xss)
+    - [11 幂等 Idempotence](#11-幂等-idempotence)
+    - [12 RESTful架构(SOAP,RPC)](#12-restful架构soaprpc)
     - [13 SOAP](#13-soap)
     - [14 RPC](#14-rpc)
-    - [15 CGI和WSGI](#15-cgiwsgi)
-    - [16 中间人攻击](#16-)
-    - [17 c10k问题](#17-c10k)
+    - [15 CGI和WSGI](#15-cgi和wsgi)
+    - [16 中间人攻击](#16-中间人攻击)
+    - [17 c10k问题](#17-c10k问题)
     - [18 socket](#18-socket)
-    - [19 浏览器缓存](#19-)
-    - [20 HTTP1.0和HTTP1.1](#20-http10http11)
+    - [19 浏览器缓存](#19-浏览器缓存)
+    - [20 HTTP1.0和HTTP1.1](#20-http10和http11)
     - [21 Ajax](#21-ajax)
 - [*NIX](#nix)
     - [unix进程间通信方式(IPC)](#unixipc)
-- [数据结构](#)
-    - [1 红黑树](#1-)
-- [编程题](#)
-    - [1 台阶问题/斐波纳挈](#1-)
-    - [2 变态台阶问题](#2-)
-    - [3 矩形覆盖](#3-)
-    - [4 杨氏矩阵查找](#4-)
-    - [5 去除列表中的重复元素](#5-)
-    - [6 链表成对调换](#6-)
-    - [7 创建字典的方法](#7-)
-        - [1 直接创建](#1-)
-        - [2 工厂方法](#2-)
-        - [3 fromkeys()方法](#3-fromkeys)
-    - [8 合并两个有序列表](#8-)
-    - [9 交叉链表求交点](#9-)
-    - [10 二分查找](#10-)
-    - [11 快排](#11-)
-    - [12 找零问题](#12-)
-    - [13 广度遍历和深度遍历二叉树](#13-)
+- [数据结构](#数据结构)
+    - [1 红黑树](#1-红黑树)
+- [编程题](#编程题)
+    - [1 台阶问题/斐波纳挈](#1-台阶问题斐波纳挈)
+    - [2 变态台阶问题](#2-变态台阶问题)
+    - [3 矩形覆盖](#3-矩形覆盖)
+    - [4 杨氏矩阵查找](#4-杨氏矩阵查找)
+    - [5 去除列表中的重复元素](#5-去除列表中的重复元素)
+    - [6 链表成对调换](#6-链表成对调换)
+    - [7 创建字典的方法](#7-创建字典的方法)
+        - [1 直接创建](#1-直接创建)
+        - [2 工厂方法](#2-工厂方法)
+        - [3 fromkeys()方法](#3-fromkeys方法)
+    - [8 合并两个有序列表](#8-合并两个有序列表)
+    - [9 交叉链表求交点](#9-交叉链表求交点)
+    - [10 二分查找](#10-二分查找)
+    - [11 快排](#11-快排)
+    - [12 找零问题](#12-找零问题)
+    - [13 广度遍历和深度遍历二叉树](#13-广度遍历和深度遍历二叉树)
     - [14 二叉树节点](#14-)
     - [15 层次遍历](#15-)
     - [16 深度遍历](#16-)
-    - [17 前中后序遍历](#17-)
-    - [18 求最大树深](#18-)
-    - [19 求两棵树是否相同](#19-)
-    - [20 前序中序求后序](#20-)
-    - [21 单链表逆置](#21-)
+    - [17 前中后序遍历](#17-前中后序遍历)
+    - [18 求最大树深](#18-求最大树深)
+    - [19 求两棵树是否相同](#19-求两棵树是否相同)
+    - [20 前序中序求后序](#20-前序中序求后序)
+    - [21 单链表逆置](#21-单链表逆置)
 
 <!-- markdown-toc end -->
 
@@ -122,6 +125,7 @@
 a = 1
 def fun(a):
     a = 2
+fun(a)
 print a  # 1
 ```
 
@@ -129,10 +133,40 @@ print a  # 1
 a = []
 def fun(a):
     a.append(1)
+fun(a)
 print a  # [1]
 ```
 
 所有的变量都可以理解是内存中一个对象的“引用”，或者，也可以看似c中void*的感觉。
+
+通过`id`来看引用`a`的内存地址可以比较理解：
+
+```python
+a = 1
+def fun(a):
+    print "func_in",id(a)   # func_in 41322472
+    a = 2
+    print "re-point",id(a), id(2)   # re-point 41322448 41322448
+print "func_out",id(a), id(1)  # func_out 41322472 41322472
+fun(a)
+print a  # 1
+```
+
+注：具体的值在不同电脑上运行时可能不同。
+
+可以看到，在执行完`a = 2`之后，`a`引用中保存的值，即内存地址发生变化，由原来`1`对象的所在的地址变成了`2`这个实体对象的内存地址。
+
+而第2个例子`a`引用保存的内存值就不会发生变化：
+
+```python
+a = []
+def fun(a):
+    print "func_in",id(a)  # func_in 53629256
+    a.append(1)
+print "func_out",id(a)     # func_out 53629256
+fun(a)
+print a  # [1]
+```
 
 这里记住的是类型是属于对象的，而不是变量。而对象有两种,“可更改”（mutable）与“不可更改”（immutable）对象。在python中，strings, tuples, 和numbers是不可更改的对象，而list,dict等则是可以修改的对象。(这就是这个问题的重点)
 
@@ -625,8 +659,24 @@ is是对比地址,==是对比值
 * readlines   读取整个文件到一个迭代器以供我们遍历
 
 ## 28 Python2和3的区别
+推荐：[Python 2.7.x 与 Python 3.x 的主要差异](http://chenqx.github.io/2014/11/10/Key-differences-between-Python-2-7-x-and-Python-3-x/)
 
+## 29 super init
+super() lets you avoid referring to the base class explicitly, which can be nice. But the main advantage comes with multiple inheritance, where all sorts of fun stuff can happen. See the standard docs on super if you haven't already.
 
+Note that the syntax changed in Python 3.0: you can just say super().__init__() instead of super(ChildB, self).__init__() which IMO is quite a bit nicer.
+
+http://stackoverflow.com/questions/576169/understanding-python-super-with-init-methods
+
+## 30 range and xrange
+都在循环时使用，xrange内存性能更好。
+for i in range(0, 20):
+for i in xrange(0, 20):
+What is the difference between range and xrange functions in Python 2.X?
+ range creates a list, so if you do range(1, 10000000) it creates a list in memory with 9999999 elements.
+ xrange is a sequence object that evaluates lazily.
+
+http://stackoverflow.com/questions/94935/what-is-the-difference-between-range-and-xrange-functions-in-python-2-x
 
 # 操作系统
 
@@ -652,11 +702,11 @@ epoll改了三个缺点.
 
 ## 2 调度算法
 
-1. 先来先服务
-2. 短作业优先
-3. 最高优先权调度
-1. 时间片轮转
-2. 多级反馈队列调度
+1. 先来先服务(FCFS, First Come First Serve)
+2. 短作业优先(SJF, Shortest Job First)
+3. 最高优先权调度(Priority Scheduling)
+4. 时间片轮转(RR, Round Robin)
+5. 多级反馈队列调度(multilevel feedback queue scheduling)
 
 实时调度算法:
 
@@ -715,7 +765,7 @@ Bulid过程可以分解为4个步骤:预处理(Prepressing), 编译(Compilation)
 
 ### 4 链接
 
-链接的主要内容就是把各个模块直接爱你相互引用的部分处理好，使各个模块可以正确的拼接。
+链接的主要内容就是把各个模块之间相互引用的部分处理好，使各个模块可以正确的拼接。
 链接的主要过程包块 地址和空间的分配（Address and Storage Allocation）、符号决议(Symbol Resolution)和重定位(Relocation)等步骤。
 
 ## 5 静态链接和动态链接
@@ -727,7 +777,7 @@ Bulid过程可以分解为4个步骤:预处理(Prepressing), 编译(Compilation)
 
 ## 6 虚拟内存技术
 
-虚拟存储器是值具有请求调入功能和置换功能,能从逻辑上对内存容量加以扩充的一种存储系统.
+虚拟存储器是指具有请求调入功能和置换功能,能从逻辑上对内存容量加以扩充的一种存储系统.
 
 ## 7 分页和分段
 
@@ -797,7 +847,7 @@ InnoDB 的趋势会是一个非常复杂的存储引擎，对于一些小的应�
 
 ## 3 ARP协议
 
-地址解析协议(Address Resolution Protocol): 根据IP地址获取物理地址的一个TCP/IP协
+地址解析协议(Address Resolution Protocol): 根据IP地址获取物理地址的一个TCP/IP协议
 
 ## 4 urllib和urllib2的区别
 
@@ -808,10 +858,38 @@ InnoDB 的趋势会是一个非常复杂的存储引擎，对于一些小的应�
 
 
 ## 5 Post和Get
+[GET和POST有什么区别？及为什么网上的多数答案都是错的](http://www.cnblogs.com/nankezhishi/archive/2012/06/09/getandpost.html)
+[知乎回答](https://www.zhihu.com/question/31640769?rf=37401322)
+
+get: [RFC 2616 - Hypertext Transfer Protocol -- HTTP/1.1](http://tools.ietf.org/html/rfc2616#section-9.3)
+post: [RFC 2616 - Hypertext Transfer Protocol -- HTTP/1.1](http://tools.ietf.org/html/rfc2616#section-9.5)
+
+
 
 ## 6 Cookie和Session
 
+||Cookie|Session|
+|:--|:--|:--|
+|储存位置|客户端|服务器端|
+|目的|跟踪会话，也可以保存用户偏好设置或者保存用户名密码等|跟踪会话|
+|安全性|不安全|安全|
+
+session技术是要使用到cookie的，之所以出现session技术，主要是为了安全。
+
 ## 7 apache和nginx的区别
+
+nginx 相对 apache 的优点：
+* 轻量级，同样起web 服务，比apache 占用更少的内存及资源
+* 抗并发，nginx 处理请求是异步非阻塞的，支持更多的并发连接，而apache 则是阻塞型的，在高并发下nginx 能保持低资源低消耗高性能
+* 配置简洁
+* 高度模块化的设计，编写模块相对简单
+* 社区活跃
+
+apache 相对nginx 的优点：
+* rewrite ，比nginx 的rewrite 强大
+* 模块超多，基本想到的都可以找到
+* 少bug ，nginx 的bug 相对较多
+* 超稳定
 
 ## 8 网站用户密码保存
 
@@ -875,9 +953,12 @@ RPC（Remote Procedure Call Protocol）——远程过程调用协议，它是�
 进化的顺序: RPC -> SOAP -> RESTful
 
 ## 15 CGI和WSGI
+CGI是通用网关接口，是连接web服务器和应用程序的接口，用户通过CGI来获取动态数据或文件等。
+CGI程序是一个独立的程序，它可以用几乎所有语言来写，包括perl，c，lua，python等等。
 
+WSGI, Web Server Gateway Interface，是Python应用程序或框架和Web服务器之间的一种接口，WSGI的其中一个目的就是让用户可以用统一的语言(Python)编写前后端。
 
-
+官方说明：[PEP-3333](https://www.python.org/dev/peps/pep-3333/)
 
 ## 16 中间人攻击
 
@@ -888,6 +969,7 @@ RPC（Remote Procedure Call Protocol）——远程过程调用协议，它是�
 ## 17 c10k问题
 
 所谓c10k问题，指的是服务器同时支持成千上万个客户端的问题，也就是concurrent 10 000 connection（这也是c10k这个名字的由来）。
+推荐: http://www.kegel.com/c10k.html
 
 ## 18 socket
 
@@ -911,6 +993,7 @@ Socket=Ip address+ TCP/UDP + port
 3. 身份认证,状态管理,Cache缓存
 
 ## 21 Ajax
+AJAX,Asynchronous JavaScript and XML（异步的 JavaScript 和 XML）, 是与在不重新加载整个页面的情况下，与服务器交换数据并更新部分网页的技术。
 
 # *NIX
 
@@ -945,25 +1028,26 @@ AVL是严格平衡树，因此在增加或者删除节点的时候，根据不�
 一只青蛙一次可以跳上1级台阶，也可以跳上2级。求该青蛙跳上一个n级的台阶总共有多少种跳法。
 
 ```python
-fib = lambda n: 1 if n <= 2 else fib(n - 1) + fib(n - 2)
+fib = lambda n: n if n <= 2 else fib(n - 1) + fib(n - 2)
 ```
 
 第二种记忆方法
 
 ```python
-def memo(func): 
-    cache={}    
-    def wrap(*args): 
-        if args not in cache: 
-            cache[args]=func(*args) 
-        return cache[args] 
-    return wrap 
+def memo(func):
+    cache = {}
+    def wrap(*args):
+        if args not in cache:
+            cache[args] = func(*args)
+        return cache[args]
+    return wrap
 
-@memo 
-def fib(i): 
-    if i<2: 
-        return 1 
-    return fib(i-1)+fib(i-2)
+
+@memo
+def fib(i):
+    if i < 2:
+        return 1
+    return fib(i-1) + fib(i-2)
 ```
 
 第三种方法
@@ -971,11 +1055,9 @@ def fib(i):
 ```python
 def fib(n):
     a, b = 0, 1
-    while a < n:
-        print a,
-        a, b  = b, a + b
-    print
-fib(1000)
+    for _ in xrange(n):
+        a, b = b, a + b
+    return b
 ```
 
 ## 2 变态台阶问题
@@ -983,7 +1065,7 @@ fib(1000)
 一只青蛙一次可以跳上1级台阶，也可以跳上2级……它也可以跳上n级。求该青蛙跳上一个n级的台阶总共有多少种跳法。
 
 ```python
-fib = lambda n: i if n < 2 else 2 * fib(n - 1)
+fib = lambda n: n if n < 2 else 2 * fib(n - 1)
 ```
 
 ## 3 矩形覆盖
@@ -999,6 +1081,28 @@ f = lambda n: 1 if n < 2 else f(n - 1) + f(n - 2)
 ## 4 杨氏矩阵查找
 
 在一个m行n列二维数组中，每一行都按照从左到右递增的顺序排序，每一列都按照从上到下递增的顺序排序。请完成一个函数，输入这样的一个二维数组和一个整数，判断数组中是否含有该整数。
+
+使用Step-wise线性搜索。
+
+```python
+def get_value(l, r, c):
+    return l[r][c]
+
+def find(l, x):
+    m = len(l) - 1
+    n = len(l[0]) - 1
+    r = 0
+    c = n
+    while c >= 0 and r <= m:
+        value = get_value(l, r, c)
+        if value == x:
+            return True
+        elif value > x:
+            c = c - 1
+        elif value < x:
+            r = r + 1
+    return False
+```
 
 ## 5 去除列表中的重复元素
 
@@ -1171,13 +1275,14 @@ def binarySearch(l, t):
             low = mid + 1
         else:
             return mid
-    return False
+    return low if l[low] == t else False
 
 if __name__ == '__main__':
     l = [1, 4, 12, 45, 66, 99, 120, 444]
     print binarySearch(l, 12)
     print binarySearch(l, 1)
     print binarySearch(l, 13)
+    print binarySearch(l, 444)
 ```
 
 ## 11 快排
